@@ -40,6 +40,44 @@
       }
     ]
   }
+  {
+    'begin': '^\\s*(#)\\s*(include)\\b\\s+'
+    'captures':
+      '1':
+        'name': 'punctuation.definition.keyword.slice'
+      '2':
+        'name': 'keyword.control.include.slice'
+    'end': '(?=(?://|/\\*))|(?<!\\\\)(?=\\n)'
+    'name': 'meta.preprocessor.include.slice'
+    'patterns': [
+      {
+        'match': '(?>\\\\\\s*\\n)'
+        'name': 'punctuation.separator.continuation.slice'
+      }
+      {
+        'begin': '"'
+        'beginCaptures':
+          '0':
+            'name': 'punctuation.definition.string.begin.slice'
+        'end': '"'
+        'endCaptures':
+          '0':
+            'name': 'punctuation.definition.string.end.slice'
+        'name': 'string.quoted.double.include.slice'
+      }
+      {
+        'begin': '<'
+        'beginCaptures':
+          '0':
+            'name': 'punctuation.definition.string.begin.slice'
+        'end': '>'
+        'endCaptures':
+          '0':
+            'name': 'punctuation.definition.string.end.slice'
+        'name': 'string.quoted.other.lt-gt.include.slice'
+      }
+    ]
+  }
 ]
 
 
