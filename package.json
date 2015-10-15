@@ -1,0 +1,20 @@
+{
+  "name": "atom-slice",
+  "version": "0.0.0",
+  "description": "Syntax highlighting for Slice files as used with ZeroC Ice",
+  "keywords": [
+    "syntax"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AndiDog/atom-slice"
+  },
+  "bugs": {
+    "url": "https://github.com/AndiDog/atom-slice/issues"
+  },
+  "license": "MIT",
+  "engines": {
+    "atom": ">0.50.0"
+  },
+  "dependencies": {}
+}

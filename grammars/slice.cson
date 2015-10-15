@@ -1,0 +1,101 @@
+# Some parts taken from language-c (https://github.com/atom/language-c/tree/master/grammars)
+'scopeName': 'source.slice'
+'name': 'Slice'
+'fileTypes': ['ice']
+
+
+'patterns': [
+  {
+    'include': '#comments'
+  }
+  {
+    'match': '\\b(bool|byte|class|dictionary|double|enum|exception|float|int|interface|long|sequence|string|struct|void)\\b'
+    'name': 'storage.type.slice'
+  }
+  {
+    'match': '\\b(module)\\b'
+    'name': 'keyword.control.namespace.slice'
+  }
+  {
+    'match': '\\b(const)\\b'
+    'name': 'storage.modifier.slice'
+  }
+  {
+    'match': '\\b(idempotent|throws)\\b'
+    'name': 'keyword.control.slice'
+  }
+  {
+    'begin': '^\\s*(#)\\s*(define|ifdef|ifndef|pragma)\\b'
+    'captures':
+      '1':
+        'name': 'punctuation.definition.keyword.slice'
+      '2':
+        'name': 'keyword.control.import.slice'
+    'end': '(?=(?://|/\\*))|(?<!\\\\)(?=\\n)'
+    'name': 'meta.preprocessor.slice'
+    'patterns': [
+      {
+        'match': '(?>\\\\\\s*\\n)'
+        'name': 'punctuation.separator.continuation.slice'
+      }
+    ]
+  }
+]
+
+
+'repository':
+  'comments':
+    'patterns': [
+      {
+        'captures':
+          '1':
+            'name': 'meta.toc-list.banner.block.slice'
+        'match': '^/\\* =(\\s*.*?)\\s*= \\*/$\\n?'
+        'name': 'comment.block.slice'
+      }
+      {
+        'begin': '/\\*'
+        'beginCaptures':
+          '0':
+            'name': 'punctuation.definition.comment.begin.slice'
+        'end': '\\*/'
+        'endCaptures':
+          '0':
+            'name': 'punctuation.definition.comment.end.slice'
+        'name': 'comment.block.slice'
+      }
+      {
+        'match': '\\*/.*\\n'
+        'name': 'invalid.illegal.stray-comment-end.slice'
+      }
+      {
+        'captures':
+          '1':
+            'name': 'meta.toc-list.banner.line.slice'
+        'match': '^// =(\\s*.*?)\\s*=\\s*$\\n?'
+        'name': 'comment.line.banner.c++'
+      }
+      {
+        'begin': '(^[ \\t]+)?(?=//)'
+        'beginCaptures':
+          '1':
+            'name': 'punctuation.whitespace.comment.leading.c++'
+        'end': '(?!\\G)'
+        'patterns': [
+          {
+            'begin': '//'
+            'beginCaptures':
+              '0':
+                'name': 'punctuation.definition.comment.c++'
+            'end': '\\n'
+            'name': 'comment.line.double-slash.c++'
+            'patterns': [
+              {
+                'match': '(?>\\\\\\s*\\n)'
+                'name': 'punctuation.separator.continuation.c++'
+              }
+            ]
+          }
+        ]
+      }
+    ]
