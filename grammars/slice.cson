@@ -78,6 +78,9 @@
       }
     ]
   }
+  {
+    'include': '#strings'
+  }
 ]
 
 
@@ -133,6 +136,50 @@
                 'name': 'punctuation.separator.continuation.c++'
               }
             ]
+          }
+        ]
+      }
+    ]
+  'strings':
+    'patterns': [
+      {
+        'begin': '"'
+        'beginCaptures':
+          '0':
+            'name': 'punctuation.definition.string.begin.slice'
+        'end': '"'
+        'endCaptures':
+          '0':
+            'name': 'punctuation.definition.string.end.slice'
+        'name': 'string.quoted.double.slice'
+        'patterns': [
+          {
+            'include': '#string_escaped_char'
+          }
+          {
+            'include': '#string_placeholder'
+          }
+          {
+            'include': '#line_continuation_character'
+          }
+        ]
+      }
+      {
+        'begin': '\''
+        'beginCaptures':
+          '0':
+            'name': 'punctuation.definition.string.begin.slice'
+        'end': '\''
+        'endCaptures':
+          '0':
+            'name': 'punctuation.definition.string.end.slice'
+        'name': 'string.quoted.single.slice'
+        'patterns': [
+          {
+            'include': '#string_escaped_char'
+          }
+          {
+            'include': '#line_continuation_character'
           }
         ]
       }
