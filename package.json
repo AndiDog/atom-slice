@@ -1,6 +1,6 @@
 {
   "name": "atom-slice",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Syntax highlighting for Slice files as used with ZeroC Ice",
   "keywords": [
     "syntax"
