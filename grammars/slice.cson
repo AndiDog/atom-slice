@@ -9,7 +9,7 @@
     'include': '#comments'
   }
   {
-    'match': '\\b(bool|byte|class|dictionary|double|enum|exception|float|int|interface|long|Object|sequence|short|string|struct|void)\\b'
+    'match': '\\b(bool|byte|class|dictionary|double|enum|exception|float|int|interface|LocalObject|long|Object|sequence|short|string|struct|void)\\b'
     'name': 'storage.type.slice'
   }
   {
@@ -17,7 +17,7 @@
     'name': 'keyword.control.namespace.slice'
   }
   {
-    'match': '\\b(const|extends|optional|out)\\b'
+    'match': '\\b(const|extends|implements|optional|out)\\b'
     'name': 'storage.modifier.slice'
   }
   {
@@ -77,6 +77,10 @@
         'name': 'string.quoted.other.lt-gt.include.slice'
       }
     ]
+  }
+  {
+    'match': '\\b(true|false)\\b'
+    'name': 'constant.language.slice'
   }
   {
     'include': '#strings'
