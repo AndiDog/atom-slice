@@ -9,7 +9,7 @@
     'include': '#comments'
   }
   {
-    'match': '\\b(bool|byte|class|dictionary|double|enum|exception|float|int|interface|long|sequence|string|struct|void)\\b'
+    'match': '\\b(bool|byte|class|dictionary|double|enum|exception|float|int|interface|long|Object|sequence|short|string|struct|void)\\b'
     'name': 'storage.type.slice'
   }
   {
@@ -17,7 +17,7 @@
     'name': 'keyword.control.namespace.slice'
   }
   {
-    'match': '\\b(const)\\b'
+    'match': '\\b(const|extends|optional|out)\\b'
     'name': 'storage.modifier.slice'
   }
   {
@@ -25,7 +25,7 @@
     'name': 'keyword.control.slice'
   }
   {
-    'begin': '^\\s*(#)\\s*(define|ifdef|ifndef|pragma)\\b'
+    'begin': '^\\s*(#)\\s*(define|ifdef|ifndef|pragma|endif)\\b'
     'captures':
       '1':
         'name': 'punctuation.definition.keyword.slice'
