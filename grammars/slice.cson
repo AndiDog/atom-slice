@@ -79,6 +79,10 @@
     ]
   }
   {
+    'match': '::'
+    'name': 'punctuation.separator.namespace.access.slice'
+  }
+  {
     'match': '\\b(true|false)\\b'
     'name': 'constant.language.slice'
   }
